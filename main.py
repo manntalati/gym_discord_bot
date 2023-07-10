@@ -4,6 +4,7 @@ from online import online
 from discord.ext import commands, tasks
 from discord import Embed, Color
 
+exercises = []
 
 #bicep_exercises = ["Seated Hammer Curl", "Bicep Curls", "EZ Bar Curl", "Preacher Curls", "Hammer Curl", "Chin Ups", "Dumbell Incline Bicep Curls"]
 #  tricep_exercises = ["Dips", "Rope Pushdowns", "Skullcrushers", "Overhead Dumbell Extensions"]
@@ -18,6 +19,13 @@ client = commands.Bot(command_prefix="-", intents=intents)
 async def on_ready():
     print("KACHOW")
 
+def list(msg):
+  def check2(reaction, user):
+    if reaction.message.id != message.id or user == client.user:
+      return False
+    if reaction.emoji == "✔️":
+            exercises.add(msg)
+  return check2
 
 def buttons(message, l, r):
     def check(reaction, user):
@@ -62,7 +70,7 @@ async def gym(ctx):
           embedVar.add_field(
               name="Biceps",
               value=
-              "1. Seated Hammer Curls\n2. Bicep Curls\n3. EZ Bar Curls\n 4. Preacher Curls\n 5. Hammer Curl \n 6. Chin Ups \n 7. Dumbell Incline Bicep Curls"
+              "1. Seated Hammer Curls\n2. Bicep Curls\n3. EZ Bar Curls\n4. Preacher Curls\n5. Hammer Curl \n6. Chin Ups \n7. Dumbell Incline Bicep Curls"
           )
           embedVar2 = discord.Embed(title=f"Gym",
                                    colour=0xb042f5)
@@ -84,6 +92,7 @@ async def gym(ctx):
           page = 0
           left = "⏪"
           right = "⏩"
+          check = "✔️"
           while True:
               msg2 = await ctx.send(embed=pages[(page)])
               l_reaction = page != 0
