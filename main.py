@@ -6,7 +6,7 @@ from discord import Embed, Color
 
 exercises = []
 
-#bicep_exercises = ["Seated Hammer Curl", "Bicep Curls", "EZ Bar Curl", "Preacher Curls", "Hammer Curl", "Chin Ups", "Dumbell Incline Bicep Curls"]
+#  bicep_exercises = ["Seated Hammer Curl", "Bicep Curls", "EZ Bar Curl", "Preacher Curls", "Hammer Curl", "Chin Ups", "Dumbell Incline Bicep Curls"]
 #  tricep_exercises = ["Dips", "Rope Pushdowns", "Skullcrushers", "Overhead Dumbell Extensions"]
 #  shoulder_exercises = ["Seated Shoulder Press", "Arnold Press", "Front Press", "Lateral Raises", "Shoulder Shrugs", "Overhead Shoulder Press"]
 
